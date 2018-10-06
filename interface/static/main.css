@@ -1,0 +1,323 @@
+/* Generic */
+*,
+*:hover,
+*:focus,
+*:active {
+  cursor: none;
+}
+
+.html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  font-size: 16px;
+  cursor: none;
+}
+
+/* Main container w/ background */
+
+.main_block {
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  background: #1e6aa8;
+  background: -moz-linear-gradient(
+    top,
+    #1e6aa8 9%,
+    #2989d8 53%,
+    #b2852c 64%,
+    #94d372 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    #1e6aa8 9%,
+    #2989d8 53%,
+    #b2852c 64%,
+    #94d372 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    #1e6aa8 9%,
+    #2989d8 53%,
+    #b2852c 64%,
+    #94d372 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e6aa8', endColorstr='#94d372',GradientType=0 );
+}
+
+/* OTHER PLAYER AVATAR */
+
+.player_container_block {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+}
+
+.player_block {
+  background-image: url("player.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 18vw;
+  height: 41vh;
+  position: fixed;
+  bottom: 24vh;
+  left: 12vw;
+}
+
+/* FENCE DISPLAY */
+
+.fence_container_block {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+}
+
+.fence_block {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-image: url("fence.png");
+  background-repeat: repeat;
+  background-size: 200px;
+}
+
+/* CROSS HAIR */
+
+.crosshair_container_block {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 4;
+}
+
+.crosshair_block {
+  width: 3vw;
+  height: 3vw;
+  border: solid 5px #0f0;
+  border-radius: 50%;
+  position: absolute;
+}
+
+/* POPOUT AREA */
+
+.popout_container_block {
+  width: 25vw;
+  height: 40vh;
+  position: fixed;
+  z-index: 5;
+  right: 2vw;
+  top: 2vw;
+}
+
+/* TIMER */
+
+.timer_container_block {
+  width: 100%;
+  background-color: #e0224e;
+  border-radius: 7px;
+  padding: 0.8vw;
+  border: 3px solid #111;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2vh;
+}
+
+.timer_number_block {
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 4px;
+  border: 2px solid #bbb;
+  padding: 0.2rem 0.3rem;
+  font-family: monospace;
+  text-align: right;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.timer_text_block {
+  font-size: 1.5rem;
+  font-family: monospace;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* COMMANDER */
+
+.commander_container_block {
+  width: 100%;
+  background-color: #232323;
+  border-radius: 7px;
+  padding: 0.8vw;
+  border: 3px solid #111;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.commander_avatar_block {
+  width: 100%;
+  height: 20vh;
+  background-color: red;
+  margin-bottom: 1.5vh;
+  border: 2px solid;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.commander-avatar-head-block {
+  width: 100%;
+  height: 100%;
+  background-image: url("commander-head.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.commander-avatar-mouth-block {
+  width: 37%;
+  padding-bottom: 28%;
+  height: 0;
+  bottom: 35%;
+  left: 50%;
+  box-sizing: border-box;
+  margin-left: -15%;
+  position: relative;
+  background-color: black;
+}
+
+.commander-avatar-mouth-block:after {
+  content: "";
+  position: absolute;
+  background-image: url(commander-mouth.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation-name: mouth;
+  animation-duration: 200ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes mouth {
+  from {
+    top: 0%;
+  }
+  to {
+    top: 50%;
+  }
+}
+
+.commander_text_block {
+  background-color: #eee;
+  padding: 0.3rem 0.5rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  border: 2px solid;
+  box-sizing: border-box;
+}
+
+/* TEXT INPUT */
+
+.text_input_container_block {
+  width: 100vw;
+  height: 14vh;
+  position: fixed;
+  z-index: 6;
+  bottom: 5vw;
+  display: flex;
+  padding: 0 20vw;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.text_input_block {
+  width: 100%;
+  border: 2px solid #000;
+  border-radius: 7px;
+  padding: 0.3rem 0.5rem 1.2rem;
+  font-size: 1.5rem;
+}
+
+.text_input_note_block {
+  position: absolute;
+  right: 23vw;
+  bottom: 5px;
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: #333;
+}
+
+/* Person speaking bubble */
+
+.person_speak_container_block {
+  position: fixed;
+  z-index: 7;
+  bottom: 25vw;
+  top: 5vh;
+  left: 30vw;
+  right: 30vw;
+  height: 70vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.person_speak_block {
+  background-color: white;
+  border: 3px solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  position: relative;
+}
+
+.person_speak_block:before {
+  content: "";
+  position: absolute;
+  height: 3vw;
+  display: block;
+  width: 5vw;
+  border-right: 3vw solid white;
+  border-top: 1.5vw solid transparent;
+  left: -3rem;
+  border-bottom: 1.5vw solid transparent;
+  border-left: 0vw solid transparent;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.person_speak_block:after {
+  content: "";
+  position: absolute;
+  height: 3vw;
+  display: block;
+  width: 3vw;
+  border-right: 3vw solid black;
+  border-top: 2vw solid transparent;
+  left: -2rem;
+  border-bottom: 2vw solid transparent;
+  border-left: 0vw solid transparent;
+  box-sizing: border-box;
+  top: 0.2rem;
+  z-index: 1;
+}

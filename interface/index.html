@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>100 SECONDS OF WAR</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+
+<!-- 
+    main
+        background
+    person
+        avatar
+        text bubble
+    fence
+    crosshair
+    popout
+        timer
+        commander
+            commander image
+            commander text
+    text input
+-->
+
+<body>
+    <!-- Main, layer 0 -->
+    <div id="main" class="main_block">
+
+        <!-- Player, layer 1 -->
+        <div id="player_container" class="player_container_block">
+            <div id="player" class="player_block">
+
+            </div>
+        </div>
+
+        <!-- Fence, layer 2 -->
+        <div id="fence_container" class="fence_container_block">
+            <div id="fence" class="fence_block"></div>
+        </div>
+
+        <!-- Crosshair, layer 3  -->
+        <div id="crosshair_container" class="crosshair_container_block">
+            <div id="crosshair" class="crosshair_block"></div>
+        </div>
+
+        <!-- Popout (container for timer and commander), layer 4 -->
+        <div id="popout_container" class="popout_container_block">
+
+            <!-- timer (popout inner) -->
+            <div id="timer_container" class="timer_container_block">
+                <div id="timer_number" class="timer_number_block">
+                    100
+                </div>
+                <div id="timer_text" class="timer_text_block">
+                    SECONDS OF WAR
+                </div>
+            </div>
+
+            <!-- commander (popout inner) -->
+            <div id="commander_container" class="commander_container_block">
+                <div id="commander_avatar" class="commander_avatar_block">
+                    <div id="commander-avatar-head" class="commander-avatar-head-block"></div>
+                    <div id="commander-avatar-mouth" class="commander-avatar-mouth-block"></div>
+                </div>
+                <div id="commander_text" class="commander_text_block">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Player text input, layer 5 -->
+        <div id="text_input_container" class="text_input_container_block">
+            <textarea name="text_input" id="text_input" class="text_input_block" placeholder="Say something..."></textarea>
+            <div id="text_input_note" class="text_input_note_block">Press enter to submit</div>
+        </div>
+
+        <!-- Person text bubble, layer 6 -->
+        <div id="person_speak_container" class="person_speak_container_block">
+            <div id="person_speak" class="person_speak_block">
+                Text
+            </div>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
