@@ -344,6 +344,16 @@ body.happy_end .thought_bubble_container_block {
   transition: opacity 2s;
 }
 
+body.happy_end .player_block {
+  background-image: url("flower.png");
+  width: 22vw;
+  height: 41vh;
+  position: fixed;
+  bottom: 24vh;
+  left: 8vw;
+  transition: background-image width left 2s;
+}
+
 /* Sad end game state */
 body.sad_end .popout_container_block,
 body.sad_end .text_input_container_block,
