@@ -1,6 +1,0 @@
-{
-    "keys": {
-        "player_name": "{{you}}",
-        "other_player_name": "{{them}}"
-    }
-}
