@@ -6,7 +6,7 @@
   cursor: none;
 }
 
-.html,
+html,
 body {
   padding: 0;
   margin: 0;
@@ -19,9 +19,14 @@ body {
   cursor: none;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Main container w/ background */
 
 .main_block {
+  transition: background-color 2s;
   z-index: 1;
   width: 100vw;
   height: 100vh;
@@ -168,33 +173,34 @@ body {
 
 .commander_avatar_block {
   width: 100%;
-  height: 20vh;
   background-color: red;
   margin-bottom: 1.5vh;
   border: 2px solid;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .commander-avatar-head-block {
-  width: 100%;
-  height: 100%;
-  background-image: url("commander-head.png");
+  width: 20vw;
+  height: 15vw;
+  background-image: url(commander-head.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .commander-avatar-mouth-block {
-  width: 37%;
+  width: 8vw;
   padding-bottom: 28%;
   height: 0;
-  bottom: 35%;
+  bottom: -1vw;
   left: 50%;
   box-sizing: border-box;
-  margin-left: -15%;
-  position: relative;
+  margin-left: -3.2vw;
+  position: absolute;
   background-color: black;
 }
 
@@ -231,6 +237,7 @@ body {
   line-height: 1.5;
   border: 2px solid;
   box-sizing: border-box;
+  text-transform: capitalize;
 }
 
 /* TEXT INPUT */
@@ -288,36 +295,91 @@ body {
   padding: 0.5rem 0.7rem;
   font-size: 1.5rem;
   line-height: 1.2;
-  position: relative;
+  min-height: 6vw;
 }
 
 .person_speak_block:before {
   content: "";
   position: absolute;
+  z-index: -1;
+  background-color: white;
+  width: 3vw;
   height: 3vw;
-  display: block;
-  width: 5vw;
-  border-right: 3vw solid white;
-  border-top: 1.5vw solid transparent;
-  left: -3rem;
-  border-bottom: 1.5vw solid transparent;
-  border-left: 0vw solid transparent;
+  transform: rotate(45deg);
+  left: -1.5vw;
   box-sizing: border-box;
-  z-index: 2;
+  border: 3px solid;
+  top: 50%;
+  margin-top: -1.5vw;
 }
 
-.person_speak_block:after {
-  content: "";
-  position: absolute;
-  height: 3vw;
-  display: block;
-  width: 3vw;
-  border-right: 3vw solid black;
-  border-top: 2vw solid transparent;
-  left: -2rem;
-  border-bottom: 2vw solid transparent;
-  border-left: 0vw solid transparent;
+/* thought bubble */
+.thought_bubble_container_block {
+  position: fixed;
+  z-index: 8;
+  height: 28vh;
+  width: 28vw;
+  top: 2vh;
+  left: 2vw;
+}
+
+.thought_bubble_block {
+  width: 100%;
+  background-color: #a1f4f9;
+  border: 2px solid;
+  border-radius: 4px;
   box-sizing: border-box;
-  top: 0.2rem;
-  z-index: 1;
+  padding: 0.3rem 0.5rem;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}
+
+/* Happy end game state */
+
+body.happy_end .fence_container_block,
+body.happy_end .popout_container_block,
+body.happy_end .crosshair_container_block,
+body.happy_end .thought_bubble_container_block {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+/* Sad end game state */
+body.sad_end .popout_container_block,
+body.sad_end .text_input_container_block,
+body.sad_end .person_speak_container_block,
+body.sad_end .player_container_block {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+body.sad_end .thought_bubble_block {
+  background-color: #b93737;
+  transition: background-color 2s;
+}
+
+body.sad_end .main_block {
+  background: #1c0726;
+  background: -moz-linear-gradient(
+    top,
+    #1c0726 0%,
+    #0f0502 47%,
+    #c41f1f 53%,
+    #2a152b 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    #1c0726 0%,
+    #0f0502 47%,
+    #c41f1f 53%,
+    #2a152b 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    #1c0726 0%,
+    #0f0502 47%,
+    #c41f1f 53%,
+    #2a152b 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c0726', endColorstr='#2a152b',GradientType=0 );
 }
