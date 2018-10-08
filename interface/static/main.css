@@ -393,3 +393,10 @@ body.sad_end .main_block {
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c0726', endColorstr='#2a152b',GradientType=0 );
 }
+
+.audio_block {
+  position: absolute;
+  z-index: -1;
+  left: -9999px;
+  top: -9999px;
+}
